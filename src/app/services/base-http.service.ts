@@ -7,10 +7,7 @@ import { QueryParamsConstants } from "@app/constants/query-params.constants";
 @Injectable()
 export class BaseHttpService {
 
-  constructor(
-    private http: HttpClient,
-  ) {
-  }
+  constructor(private http: HttpClient) { }
 
   doGet<T>(url: string, queryParams?: QueryParams): Observable<T> {
     return this.http.get<T>(url, { params: this.getHttpParams(queryParams) });
@@ -19,10 +16,16 @@ export class BaseHttpService {
   private getHttpParams(queryParams: QueryParams | undefined): HttpParams {
     let httpParams: HttpParams = new HttpParams();
 
+    httpParams = httpParams.append(QueryParamsConstants.format, 'json');
+
     if (queryParams?.searchData) {
-      httpParams = httpParams.append(QueryParamsConstants.titleContains, queryParams.searchData);
-      httpParams = httpParams.append(QueryParamsConstants.summaryContains, queryParams.searchData);
+      const keywordsArray: string[] = queryParams.searchData.split(' ');
+      const formattedKeywords: string = keywordsArray.join(', ');
+
+      httpParams = httpParams.append(QueryParamsConstants.titleContainsOne, formattedKeywords);
+      httpParams = httpParams.append(QueryParamsConstants.summaryContainsOne, formattedKeywords);
     }
+
     return httpParams;
   }
 }

@@ -1,4 +1,5 @@
 export const QueryParamsConstants: Record<string, string> = {
-  titleContains: 'title_contains_one',
-  summaryContains: 'summary_contains_one',
+  format: 'format',
+  titleContainsOne: 'title_contains_one',
+  summaryContainsOne: 'summary_contains_one',
 };
