@@ -8,6 +8,7 @@ import { MatDividerModule } from "@angular/material/divider";
 import { ArticleCardsModule } from "@app/components/article-cards/article-cards.module";
 import { MatInputModule } from "@angular/material/input";
 import { TranslateModule } from "@ngx-translate/core";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { TranslateModule } from "@ngx-translate/core";
     MatDividerModule,
     MatInputModule,
     TranslateModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     ArticlesComponent,

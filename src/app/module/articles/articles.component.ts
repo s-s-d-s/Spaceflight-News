@@ -1,6 +1,7 @@
-import { Component, ViewEncapsulation } from "@angular/core";
+import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { BaseUnsubscribeComponent } from "@app/components/base-unsubscribe/base-unsubscribe.component";
-import { TranslateService } from "@ngx-translate/core";
+import { FormControl } from "@angular/forms";
+import { takeUntil } from "rxjs";
 
 @Component({
   selector: 'articles',
@@ -8,5 +9,10 @@ import { TranslateService } from "@ngx-translate/core";
   styleUrls: ['./articles.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ArticlesComponent extends BaseUnsubscribeComponent {
+export class ArticlesComponent extends BaseUnsubscribeComponent implements OnInit {
+  searchControl: FormControl = new FormControl();
+
+  ngOnInit(): void {
+    this.searchControl.valueChanges.pipe(takeUntil(this.destroyed)).subscribe(() => console.log(this.searchControl.value))
+  }
 }
