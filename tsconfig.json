@@ -22,12 +22,37 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/custom-typings/*": [
+        "src/custom_typings/*"
+      ],
+      "@app/components/*": [
+        "src/app/components/*"
+      ],
+      "@app/constants/*": [
+        "src/app/constants/*"
+      ],
+      "@app/module/*": [
+        "src/app/module/*"
+      ],
+      "@app/environment": [
+        "src/environments/environment.ts"
+      ],
+      "@app/services/*": [
+        "src/app/services/*"
+      ],
+      "@app/model/*": [
+        "src/app/model/*"
+      ],
+      "@app/resolvers/*": [
+        "src/app/resolvers/*"
+      ],
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
   }
 }

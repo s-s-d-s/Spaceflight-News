@@ -1,1 +1,43 @@
-<h1>ARTICLES</h1>
+<div class="articles-page-layout">
+  <div class="articles-page-header">
+    <div class="search-title">Filter by keywords</div>
+
+    <mat-form-field class="search-input">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput [placeholder]="'Search keywords'">
+    </mat-form-field>
+
+    <div class="search-result-label">Results: </div>
+    <mat-divider></mat-divider>
+  </div>
+
+  <div class="articles-page-body">
+    <mat-card class="article-card">
+      <img class="article-card-image"
+           mat-card-image
+           src="https://i0.wp.com/spacenews.com/wp-content/uploads/2022/05/512063main_artemis-orig_full.jpg"
+           alt="Article photo">
+
+      <mat-card-content class="article-card-content">
+        <div class="article-card-date-label">
+          <mat-icon class="date-icon">calendar_today</mat-icon>
+          <mat-card-subtitle class="date-label">June 29th, 2021</mat-card-subtitle>
+        </div>
+
+        <mat-card-title class="article-card-title">The 2020 World's Most Valuable Brands</mat-card-title>
+
+        <p class="card-description">
+          Non sed molestie tortor massa vitae in mattis. Eget vel consequat hendrerit commodo libero aliquam.
+          Urna arcu nunc tortor vitae pharetra...
+        </p>
+
+        <mat-card-actions class="article-card-actions">
+          <button mat-button class="article-card-button">
+            <span>Read more</span>
+            <mat-icon class="arrow-icon">arrow_right_alt</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
