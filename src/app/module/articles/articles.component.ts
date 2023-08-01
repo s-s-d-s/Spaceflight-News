@@ -9,11 +9,4 @@ import { TranslateService } from "@ngx-translate/core";
   encapsulation: ViewEncapsulation.None,
 })
 export class ArticlesComponent extends BaseUnsubscribeComponent {
-
-  constructor(
-    private translateService: TranslateService,
-  ) {
-    super();
-    console.log()
-  }
 }
