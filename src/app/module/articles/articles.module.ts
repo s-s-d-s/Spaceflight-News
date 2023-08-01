@@ -7,6 +7,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatDividerModule } from "@angular/material/divider";
 import { ArticleCardsModule } from "@app/components/article-cards/article-cards.module";
 import { MatInputModule } from "@angular/material/input";
+import { TranslateModule } from "@ngx-translate/core";
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { MatInputModule } from "@angular/material/input";
     MatIconModule,
     MatDividerModule,
     MatInputModule,
+    TranslateModule,
   ],
   declarations: [
     ArticlesComponent,

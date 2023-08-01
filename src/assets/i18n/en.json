@@ -1,0 +1,15 @@
+{
+  "page": {
+    "article": {
+      "searchInput": {
+        "title": "Filter by keywords",
+        "placeholder": "Search keywords",
+        "resultSearchLabel": "Results:"
+      },
+      "card": {
+        "photoAlt": "Article photo",
+        "infoButton": "Read more"
+      }
+    }
+  }
+}

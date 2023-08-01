@@ -5,6 +5,7 @@ import { ArticleCardsComponent}  from "@app/components/article-cards/article-car
 import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { TruncatePipe } from "../../pipes/truncate.pipe";
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -14,12 +15,13 @@ import { TruncatePipe } from "../../pipes/truncate.pipe";
   exports: [
     ArticleCardsComponent,
   ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatButtonModule,
-    MatIconModule,
-  ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatButtonModule,
+        MatIconModule,
+        TranslateModule,
+    ],
 })
 export class ArticleCardsModule {
 }

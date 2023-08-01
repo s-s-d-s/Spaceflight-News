@@ -1,13 +1,13 @@
 <div class="articles-page-layout">
   <div class="articles-page-header">
-    <div class="search-title">Filter by keywords</div>
+    <div class="search-title">{{ 'page.article.searchInput.title' | translate }}</div>
 
     <mat-form-field class="search-input">
       <mat-icon matPrefix>search</mat-icon>
-      <input matInput [placeholder]="'Search keywords'">
+      <input matInput [placeholder]="'page.article.searchInput.placeholder' | translate">
     </mat-form-field>
 
-    <div class="search-result-label">Results: </div>
+    <div class="search-result-label">{{ 'page.article.searchInput.resultSearchLabel' | translate }}</div>
     <mat-divider></mat-divider>
   </div>
 
