@@ -1,6 +1,6 @@
 @import "colors";
 
-.articles-page-body {
+.articles-container {
   display: flex;
   flex-wrap: wrap;
   gap: 45px;
@@ -26,10 +26,11 @@
     padding: 25px;
 
     .mat-icon {
+      $size: 16px;
       fill: $dark-grey;
-      font-size: 16px;
-      width: 16px;
-      height: 16px;
+      font-size: $size;
+      width: $size;
+      height: $size;
     }
 
     .article-card-date-label {
@@ -76,7 +77,7 @@
       display: flex;
       flex-direction: row-reverse;
       align-items: center;
-      color: #363636;
+      color: $dark-grey;
       font-size: 16px;
       font-style: normal;
       font-weight: 700;
