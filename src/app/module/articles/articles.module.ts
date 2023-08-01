@@ -8,6 +8,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDividerModule } from "@angular/material/divider";
+import { TruncatePipe } from "../../pipes/truncate.pipe";
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { MatDividerModule } from "@angular/material/divider";
   ],
   declarations: [
     ArticlesComponent,
+    TruncatePipe,
   ],
   exports: [
     ArticlesComponent,
