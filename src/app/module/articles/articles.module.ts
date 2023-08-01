@@ -8,7 +8,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDividerModule } from "@angular/material/divider";
-import { TruncatePipe } from "../../pipes/truncate.pipe";
+import { ArticleCardsModule } from "@app/components/article-cards/article-cards.module";
 
 @NgModule({
   imports: [
@@ -20,10 +20,10 @@ import { TruncatePipe } from "../../pipes/truncate.pipe";
     MatInputModule,
     MatIconModule,
     MatDividerModule,
+    ArticleCardsModule,
   ],
   declarations: [
     ArticlesComponent,
-    TruncatePipe,
   ],
   exports: [
     ArticlesComponent,

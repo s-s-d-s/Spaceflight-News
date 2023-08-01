@@ -11,31 +11,5 @@
     <mat-divider></mat-divider>
   </div>
 
-  <div class="articles-page-body">
-    <mat-card *ngFor="let card of [1, 2, 3, 4, 5, 6, 7, 8]" class="article-card">
-      <img class="article-card-image"
-           mat-card-image
-           src="https://www.teslarati.com/wp-content/uploads/2023/07/F2ROQN7bQAAGdCv.jpg"
-           alt="Article photo">
-      <mat-card-content class="article-card-content">
-        <div class="article-card-date-label">
-          <mat-icon class="date-icon">calendar_today</mat-icon>
-          <mat-card-subtitle class="date-label">June 29th, 2021</mat-card-subtitle>
-        </div>
-
-        <mat-card-title class="article-card-title">{{ title | truncate: 100 }}</mat-card-title>
-
-        <div class="card-description">
-          {{ descriptionText | truncate: 100 }}
-        </div>
-
-        <mat-card-actions class="article-card-actions">
-          <button mat-button class="article-card-button">
-            <span>Read more</span>
-            <mat-icon class="arrow-icon">arrow_right_alt</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card-content>
-    </mat-card>
-  </div>
+  <article-cards></article-cards>
 </div>
