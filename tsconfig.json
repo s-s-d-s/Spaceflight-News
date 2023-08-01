@@ -25,7 +25,7 @@
     ],
     "paths": {
       "@app/custom-typings/*": [
-        "src/custom_typings/*"
+        "src/custom-typings/*"
       ],
       "@app/components/*": [
         "src/app/components/*"

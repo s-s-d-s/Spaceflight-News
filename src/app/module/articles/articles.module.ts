@@ -9,6 +9,8 @@ import { ArticleCardsModule } from "@app/components/article-cards/article-cards.
 import { MatInputModule } from "@angular/material/input";
 import { TranslateModule } from "@ngx-translate/core";
 import { ReactiveFormsModule } from "@angular/forms";
+import { ArticleApiService } from "@app/services/api/article-api.service";
+import { ArticlesResolver } from "@app/resolvers/articles.resolver";
 
 @NgModule({
   imports: [
@@ -29,6 +31,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     ArticlesComponent,
   ],
   providers: [
+    ArticleApiService,
+    ArticlesResolver
   ],
 })
 export class ArticlesModule {
