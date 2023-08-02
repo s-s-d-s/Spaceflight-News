@@ -31,7 +31,11 @@ export class ArticlesComponent extends BaseUnsubscribeComponent implements OnIni
   }
 
   searchArticles(): void {
-    const queryParams: QueryParams = { searchData: this.searchControl.value };
+    const queryParams: QueryParams = { searchData: this.getSearchDataWithoutExtraSpaces() };
     this.articleApiService.getArticles(queryParams).pipe(takeUntil(this.destroyed)).subscribe(articles => this.articlesSubject.next(articles.results))
+  }
+
+  private getSearchDataWithoutExtraSpaces(): string {
+    return this.searchControl.value.replace(/\s+/g, ' ').trim();
   }
 }

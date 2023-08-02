@@ -6,11 +6,13 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { TruncatePipe } from "../../pipes/truncate.pipe";
 import { TranslateModule } from "@ngx-translate/core";
+import { HighlightPipe } from "../../pipes/highlight.pipe";
 
 @NgModule({
   declarations: [
     ArticleCardsComponent,
     TruncatePipe,
+    HighlightPipe,
   ],
   exports: [
     ArticleCardsComponent,

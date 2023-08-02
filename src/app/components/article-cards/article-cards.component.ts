@@ -9,5 +9,7 @@ import { ArticleModel } from "@app/model/article.model";
 })
 export class ArticleCardsComponent {
   readonly defaultDateFormat: string = 'MMMM d, y';
+
   @Input() articlesSubject: BehaviorSubject<ArticleModel[]> = new BehaviorSubject<ArticleModel[]>([]);
+  @Input() searchData: string = '';
 }

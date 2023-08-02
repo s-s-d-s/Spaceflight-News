@@ -10,10 +10,12 @@
         <mat-card-subtitle class="date-label">{{ article.published_at | date: defaultDateFormat }}</mat-card-subtitle>
       </div>
 
-      <mat-card-title class="article-card-title">{{ article.title | truncate: 100 }}</mat-card-title>
+      <mat-card-title class="article-card-title">
+        <span [innerHTML]="article.title | truncate: 100 | highlight: searchData"></span>
+      </mat-card-title>
 
       <div class="card-description">
-        {{ article.summary | truncate: 100 }}
+        <span [innerHTML]="article.summary | truncate: 100 | highlight: searchData"></span>
       </div>
 
       <mat-card-actions class="article-card-actions">

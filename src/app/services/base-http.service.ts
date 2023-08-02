@@ -6,6 +6,8 @@ import { QueryParamsConstants } from "@app/constants/query-params.constants";
 
 @Injectable()
 export class BaseHttpService {
+  readonly defaultRequestFormat: string = 'json';
+  readonly defaultRequestLimit: string = '12';
 
   constructor(private http: HttpClient) { }
 
@@ -16,13 +18,13 @@ export class BaseHttpService {
   private getHttpParams(queryParams: QueryParams | undefined): HttpParams {
     let httpParams: HttpParams = new HttpParams();
 
-    httpParams = httpParams.append(QueryParamsConstants.format, 'json');
+    httpParams = httpParams.append(QueryParamsConstants.format, this.defaultRequestFormat);
 
     if (queryParams?.searchData) {
       const keywordsArray: string[] = queryParams.searchData.split(' ');
       const formattedKeywords: string = keywordsArray.join(', ');
 
-      httpParams = httpParams.append(QueryParamsConstants.limit, '12');
+      httpParams = httpParams.append(QueryParamsConstants.limit, this.defaultRequestLimit);
       httpParams = httpParams.append(QueryParamsConstants.titleContainsOne, formattedKeywords);
       httpParams = httpParams.append(QueryParamsConstants.summaryContainsOne, formattedKeywords);
     }
