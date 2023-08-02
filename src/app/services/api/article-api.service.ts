@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseHttpService } from '@app/services/base-http.service';
 import { Observable } from "rxjs";
 import { EndpointsConstants } from "@app/constants/endpoints.constant";
-import { ArticleModel } from "@app/model/article.model";
+import { RageResultArticleModel } from "@app/model/article.model";
 import { QueryParams } from "@app/model/query-params.model";
 
 @Injectable()
@@ -12,8 +12,8 @@ export class ArticleApiService {
   ) {
   }
 
-  getArticles(queryParams?: QueryParams): Observable<ArticleModel[]>{
+  getArticles(queryParams?: QueryParams): Observable<RageResultArticleModel>{
     const url: string = EndpointsConstants.ARTICLES;
-    return this.baseHttpService.doGet<ArticleModel[]>(url, queryParams);
+    return this.baseHttpService.doGet<RageResultArticleModel>(url, queryParams);
   }
 }

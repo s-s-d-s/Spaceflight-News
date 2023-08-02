@@ -4,6 +4,8 @@ import { FormControl } from "@angular/forms";
 import { BehaviorSubject, takeUntil} from "rxjs";
 import { ArticleModel, RageResultArticleModel} from "@app/model/article.model";
 import { ActivatedRoute } from "@angular/router";
+import {QueryParams} from "@app/model/query-params.model";
+import {ArticleApiService} from "@app/services/api/article-api.service";
 
 @Component({
   selector: 'articles',
@@ -19,11 +21,17 @@ export class ArticlesComponent extends BaseUnsubscribeComponent implements OnIni
 
   constructor(
     private route: ActivatedRoute,
+    private articleApiService: ArticleApiService
   ) {
     super();
   }
 
   ngOnInit(): void {
-    this.searchControl.valueChanges.pipe(takeUntil(this.destroyed)).subscribe(() => console.log(this.searchControl.value));
+    this.searchControl.valueChanges.pipe(takeUntil(this.destroyed)).subscribe(() => this.searchArticles());
+  }
+
+  searchArticles(): void {
+    const queryParams: QueryParams = { searchData: this.searchControl.value };
+    this.articleApiService.getArticles(queryParams).pipe(takeUntil(this.destroyed)).subscribe(articles => this.articlesSubject.next(articles.results))
   }
 }

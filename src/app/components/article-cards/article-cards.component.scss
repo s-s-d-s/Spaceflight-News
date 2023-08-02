@@ -8,7 +8,7 @@
 
   .article-card {
     width: 400px;
-    max-height: 600px;
+    height: 600px;
     border-radius: 5px;
     border: 1px solid $flesh-white;
     background: $white;
@@ -23,6 +23,9 @@
   }
 
   .article-card-content {
+    position: relative;
+    width: 350px;
+    height: 100%;
     padding: 25px;
 
     .mat-icon {
@@ -51,7 +54,6 @@
 
     .article-card-title {
       color: $dark-grey;
-      width: 350px;
       font-size: 24px;
       font-style: normal;
       font-weight: 400;
@@ -61,7 +63,6 @@
 
     .card-description {
       color: $dark-grey;
-      width: 350px;
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -71,6 +72,8 @@
   }
 
   .article-card-actions {
+    position: absolute;
+    bottom: 20px;
     padding: 0;
 
     .article-card-button {
