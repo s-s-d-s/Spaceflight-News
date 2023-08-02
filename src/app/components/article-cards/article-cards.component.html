@@ -1,19 +1,20 @@
 <div class="articles-container">
-  <mat-card *ngFor="let card of [1, 2, 3, 4, 5, 6, 7, 8]" class="article-card">
+  <mat-card *ngFor="let article of (articlesSubject | async)" class="article-card">
     <img class="article-card-image"
          mat-card-image
-         src="https://www.teslarati.com/wp-content/uploads/2023/07/F2ROQN7bQAAGdCv.jpg"
+         [ngSrc]="article.image_url"
+         width="400" height="217"
          [alt]="'page.article.card.photoAlt' | translate">
     <mat-card-content class="article-card-content">
       <div class="article-card-date-label">
         <mat-icon class="date-icon">calendar_today</mat-icon>
-        <mat-card-subtitle class="date-label">{{ date }}</mat-card-subtitle>
+        <mat-card-subtitle class="date-label">{{ article.published_at | date: 'MMMM d, y'}}</mat-card-subtitle>
       </div>
 
-      <mat-card-title class="article-card-title">{{ title | truncate: 100 }}</mat-card-title>
+      <mat-card-title class="article-card-title">{{ article.title | truncate: 100 }}</mat-card-title>
 
       <div class="card-description">
-        {{ descriptionText | truncate: 100 }}
+        {{ article.summary | truncate: 100 }}
       </div>
 
       <mat-card-actions class="article-card-actions">

@@ -1,8 +1,12 @@
 export interface ArticleModel {
-  id: string;
+  id: number;
   title: string;
   summary: string;
-  published_at: string;
+  published_at: Date;
   image_url: string;
   url: string;
+}
+
+export interface RageResultArticleModel {
+  results: ArticleModel[];
 }

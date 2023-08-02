@@ -4,7 +4,7 @@
       "searchInput": {
         "title": "Filter by keywords",
         "placeholder": "Search keywords",
-        "resultSearchLabel": "Results:"
+        "resultSearchLabel": "Results: {{ articlesCount }}"
       },
       "card": {
         "photoAlt": "Article photo",

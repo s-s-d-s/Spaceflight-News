@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
+import { ArticleModel } from "@app/model/article.model";
 
 @Component({
   selector: 'article-cards',
@@ -6,7 +8,5 @@ import { Component } from "@angular/core";
   styleUrls: ['./article-cards.component.scss'],
 })
 export class ArticleCardsComponent {
-  title: string = "Rocket Lab’s Electron faces rare last second abort";
-  descriptionText: string = "Rocket Lab’s 40th mission will have to wait a bit longer, as the Electron rocket ignited its 9 Rutherford engines and immediately...";
-  date: string = "June 29th, 2021";
+  @Input() articlesSubject: BehaviorSubject<ArticleModel[]> = new BehaviorSubject<ArticleModel[]>([]);
 }
