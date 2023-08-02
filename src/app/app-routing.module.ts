@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RoutingArticlesRoot, RoutingDefault } from "@app/constants/routing.constant";
+import {
+  RoutingArticleDetails,
+  RoutingArticlesRoot,
+  RoutingDefault,
+  RoutingWrong
+} from "@app/constants/routing.constant";
 
 const routes: Routes = [
   {
@@ -14,6 +19,14 @@ const routes: Routes = [
       {
         path: RoutingArticlesRoot,
         loadChildren: () => import('@app/module/articles/articles.module').then(r => r.ArticlesModule),
+      },
+      {
+        path: RoutingArticleDetails,
+        loadChildren: () => import('@app/module/article-details/article-details.module').then(r => r.ArticleDetailsModule),
+      },
+      {
+        path: RoutingWrong,
+        redirectTo: RoutingArticlesRoot,
       },
     ],
   },

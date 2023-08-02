@@ -1,0 +1,25 @@
+<div class="article-details-page-layout">
+  <img class="article-details-image"
+       [src]="article.image_url"
+       [alt]="'page.articleDetails.photoAlt' | translate">
+
+  <div class="article-details-content">
+    <div class="article-details-content-inner">
+      <a [href]="article.url"
+         target="_blank"
+         class="article-details-title">
+        {{ article.title }}
+      </a>
+      <div class="article-details-summary">{{ article.summary }}</div>
+    </div>
+  </div>
+
+  <mat-card-actions class="article-details-actions">
+    <button mat-button
+            class="article-details-button"
+            (click)="goToArticles()">
+      <span>{{ 'page.articleDetails.backButton' | translate }}</span>
+      <mat-icon class="arrow-back-icon">arrow_back</mat-icon>
+    </button>
+  </mat-card-actions>
+</div>

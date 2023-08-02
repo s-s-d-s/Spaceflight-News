@@ -6,7 +6,7 @@
          [alt]="'page.article.card.photoAlt' | translate">
     <mat-card-content class="article-card-content">
       <div class="article-card-date-label">
-        <mat-icon class="date-icon">calendar_today</mat-icon>
+        <mat-icon>calendar_today</mat-icon>
         <mat-card-subtitle class="date-label">{{ article.published_at | date: defaultDateFormat }}</mat-card-subtitle>
       </div>
 
@@ -19,9 +19,11 @@
       </div>
 
       <mat-card-actions class="article-card-actions">
-        <button mat-button class="article-card-button">
+        <button mat-button
+                class="article-card-button"
+                (click)="goToArticle(article.id)">
           <span>{{ 'page.article.card.infoButton' | translate }}</span>
-          <mat-icon class="arrow-icon">arrow_right_alt</mat-icon>
+          <mat-icon class="arrow-forward-icon">arrow_forward</mat-icon>
         </button>
       </mat-card-actions>
     </mat-card-content>

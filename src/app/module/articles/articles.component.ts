@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { BaseUnsubscribeComponent } from "@app/components/base-unsubscribe/base-unsubscribe.component";
 import { FormControl } from "@angular/forms";
-import { BehaviorSubject, takeUntil} from "rxjs";
+import {BehaviorSubject, debounceTime, takeUntil} from "rxjs";
 import { ArticleModel, RageResultArticleModel} from "@app/model/article.model";
 import { ActivatedRoute } from "@angular/router";
-import {QueryParams} from "@app/model/query-params.model";
-import {ArticleApiService} from "@app/services/api/article-api.service";
+import { QueryParams } from "@app/model/query-params.model";
+import { ArticleApiService } from "@app/services/api/article-api.service";
 
 @Component({
   selector: 'articles',
@@ -14,6 +14,8 @@ import {ArticleApiService} from "@app/services/api/article-api.service";
   encapsulation: ViewEncapsulation.None,
 })
 export class ArticlesComponent extends BaseUnsubscribeComponent implements OnInit {
+  private readonly searchDebounce: number = 700;
+
   articles: RageResultArticleModel = this.route.snapshot.data['articles'];
   articlesSubject: BehaviorSubject<ArticleModel[]> = new BehaviorSubject<ArticleModel[]>(this.articles.results);
 
@@ -27,12 +29,12 @@ export class ArticlesComponent extends BaseUnsubscribeComponent implements OnIni
   }
 
   ngOnInit(): void {
-    this.searchControl.valueChanges.pipe(takeUntil(this.destroyed)).subscribe(() => this.searchArticles());
+    this.searchControl.valueChanges.pipe(takeUntil(this.destroyed), debounceTime(this.searchDebounce)).subscribe(() => this.searchArticles());
   }
 
   searchArticles(): void {
     const queryParams: QueryParams = { searchData: this.getSearchDataWithoutExtraSpaces() };
-    this.articleApiService.getArticles(queryParams).pipe(takeUntil(this.destroyed)).subscribe(articles => this.articlesSubject.next(articles.results))
+    this.articleApiService.getArticles(queryParams).pipe(takeUntil(this.destroyed)).subscribe(articles => this.articlesSubject.next(articles.results));
   }
 
   private getSearchDataWithoutExtraSpaces(): string {

@@ -1,6 +1,8 @@
 import { Component, Input } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { ArticleModel } from "@app/model/article.model";
+import { Router } from "@angular/router";
+import {RoutingArticlesRoot} from "@app/constants/routing.constant";
 
 @Component({
   selector: 'article-cards',
@@ -12,4 +14,13 @@ export class ArticleCardsComponent {
 
   @Input() articlesSubject: BehaviorSubject<ArticleModel[]> = new BehaviorSubject<ArticleModel[]>([]);
   @Input() searchData: string = '';
+
+  constructor(
+    private router: Router,
+  ) {
+  }
+
+  goToArticle(id: number): void {
+    this.router.navigate([`${RoutingArticlesRoot}/${id}`]);
+  }
 }
