@@ -1,7 +1,7 @@
-import { Component } from "@angular/core";
-import { ArticleModel } from "@app/model/article.model";
-import { ActivatedRoute, Router } from "@angular/router";
-import { RoutingArticlesRoot } from "@app/constants/routing.constant";
+import { Component } from '@angular/core';
+import { ArticleModel } from '@app/model/article.model';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RoutingArticlesRoot } from '@app/constants/routing.constant';
 
 @Component({
   selector: 'article-details',

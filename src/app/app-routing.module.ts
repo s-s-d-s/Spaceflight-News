@@ -5,7 +5,7 @@ import {
   RoutingArticlesRoot,
   RoutingDefault,
   RoutingWrong
-} from "@app/constants/routing.constant";
+} from '@app/constants/routing.constant';
 
 const routes: Routes = [
   {

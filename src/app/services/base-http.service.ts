@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { QueryParams } from "@app/model/query-params.model";
-import { QueryParamsConstants } from "@app/constants/query-params.constants";
+import { QueryParams } from '@app/model/query-params.model';
+import { QueryParamsConstants } from '@app/constants/query-params.constants';
 
 @Injectable()
 export class BaseHttpService {

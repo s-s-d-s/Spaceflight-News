@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { BaseUnsubscribeComponent } from "@app/components/base-unsubscribe/base-unsubscribe.component";
-import { FormControl } from "@angular/forms";
-import {BehaviorSubject, debounceTime, takeUntil} from "rxjs";
-import { ArticleModel, RageResultArticleModel} from "@app/model/article.model";
-import { ActivatedRoute } from "@angular/router";
-import { QueryParams } from "@app/model/query-params.model";
-import { ArticleApiService } from "@app/services/api/article-api.service";
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { BaseUnsubscribeComponent } from '@app/components/base-unsubscribe/base-unsubscribe.component';
+import { FormControl } from '@angular/forms';
+import { BehaviorSubject, debounceTime, takeUntil } from 'rxjs';
+import { ArticleModel, RageResultArticleModel} from '@app/model/article.model';
+import { ActivatedRoute } from '@angular/router';
+import { QueryParams } from '@app/model/query-params.model';
+import { ArticleApiService } from '@app/services/api/article-api.service';
 
 @Component({
   selector: 'articles',

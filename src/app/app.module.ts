@@ -1,14 +1,13 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateLoader, TranslateModule, TranslateService } from "@ngx-translate/core";
-import { HttpClient, HttpClientModule } from "@angular/common/http";
-import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-import { appInitializerFactory } from "@app/services/initializer.factory";
-import { BaseHttpService } from "@app/services/base-http.service";
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { appInitializerFactory } from '@app/services/initializer.factory';
+import { BaseHttpService } from '@app/services/base-http.service';
 
 const createTranslateLoader = (http: HttpClient): TranslateHttpLoader => {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
