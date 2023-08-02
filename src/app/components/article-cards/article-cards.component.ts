@@ -8,5 +8,6 @@ import { ArticleModel } from "@app/model/article.model";
   styleUrls: ['./article-cards.component.scss'],
 })
 export class ArticleCardsComponent {
+  readonly defaultDateFormat: string = 'MMMM d, y';
   @Input() articlesSubject: BehaviorSubject<ArticleModel[]> = new BehaviorSubject<ArticleModel[]>([]);
 }

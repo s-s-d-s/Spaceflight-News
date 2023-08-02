@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { MatCardModule } from "@angular/material/card";
 import { ArticleCardsComponent}  from "@app/components/article-cards/article-cards.component";
 import { MatButtonModule } from "@angular/material/button";
@@ -21,7 +21,6 @@ import { TranslateModule } from "@ngx-translate/core";
     MatButtonModule,
     MatIconModule,
     TranslateModule,
-    NgOptimizedImage,
   ],
 })
 export class ArticleCardsModule {
