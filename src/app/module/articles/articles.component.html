@@ -1,6 +1,6 @@
 <div class="articles-page-layout">
   <div class="articles-page-header">
-    <div class="search-title">{{ 'page.article.searchInput.title' | translate : { articlesCount: articles.results.length } }}</div>
+    <div class="search-title">{{ 'page.article.searchInput.title' | translate }}</div>
 
     <mat-form-field class="search-input">
       <mat-icon matPrefix>search</mat-icon>
@@ -9,7 +9,7 @@
              [placeholder]="'page.article.searchInput.placeholder' | translate">
     </mat-form-field>
 
-    <div class="search-result-label">{{ 'page.article.searchInput.resultSearchLabel' | translate }}</div>
+    <div class="search-result-label">{{ 'page.article.searchInput.resultSearchLabel' | translate : { articlesCount: articlesSubject.value.length } }}</div>
     <mat-divider></mat-divider>
   </div>
 

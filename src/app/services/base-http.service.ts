@@ -22,6 +22,7 @@ export class BaseHttpService {
       const keywordsArray: string[] = queryParams.searchData.split(' ');
       const formattedKeywords: string = keywordsArray.join(', ');
 
+      httpParams = httpParams.append(QueryParamsConstants.limit, '12');
       httpParams = httpParams.append(QueryParamsConstants.titleContainsOne, formattedKeywords);
       httpParams = httpParams.append(QueryParamsConstants.summaryContainsOne, formattedKeywords);
     }
