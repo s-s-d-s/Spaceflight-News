@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { BaseUnsubscribeComponent } from '@app/components/base-unsubscribe/base-unsubscribe.component';
 import { FormControl } from '@angular/forms';
 import { BehaviorSubject, debounceTime, takeUntil } from 'rxjs';
@@ -16,6 +16,8 @@ import { ArticleApiService } from '@app/services/api/article-api.service';
 export class ArticlesComponent extends BaseUnsubscribeComponent implements OnInit {
   private readonly searchDebounce: number = 700;
 
+  @ViewChild('searchInput') searchInput: ElementRef | undefined;
+
   articles: RageResultArticleModel = this.route.snapshot.data['articles'];
   articlesSubject: BehaviorSubject<ArticleModel[]> = new BehaviorSubject<ArticleModel[]>(this.articles.results);
 
@@ -29,7 +31,15 @@ export class ArticlesComponent extends BaseUnsubscribeComponent implements OnIni
   }
 
   ngOnInit(): void {
-    this.searchControl.valueChanges.pipe(takeUntil(this.destroyed), debounceTime(this.searchDebounce)).subscribe(() => this.searchArticles());
+    this.searchControl.valueChanges.pipe(takeUntil(this.destroyed), debounceTime(this.searchDebounce)).subscribe(() => {
+      this.searchControl.disable({ emitEvent: false });
+      this.searchArticles()
+      this.searchControl.enable({ emitEvent: false });
+
+      if (this.searchInput) {
+        this.searchInput.nativeElement.focus();
+      }
+    });
   }
 
   searchArticles(): void {

@@ -28,7 +28,7 @@
     background-color: $white;
   }
 
-  .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  .mat-mdc-text-field-wrapper {
     width: 600px;
     border-radius: 5px;
     border: 1px solid $flesh-white;

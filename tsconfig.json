@@ -49,6 +49,9 @@
       ],
       "@app/pipes/*": [
         "src/app/pipes/*"
+      ],
+      "@app/interceptors/*": [
+        "src/app/interceptors/*"
       ]
     }
   },
