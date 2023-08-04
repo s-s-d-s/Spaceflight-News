@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { RoutingArticlesRoot } from '@app/constants/routing.constant';
 
 @Component({
-  selector: 'article-cards',
-  templateUrl: './article-cards.component.html',
-  styleUrls: ['./article-cards.component.scss'],
+  selector: 'articles-cards',
+  templateUrl: './articles-cards.component.html',
+  styleUrls: ['./articles-cards.component.scss'],
 })
-export class ArticleCardsComponent {
+export class ArticlesCardsComponent {
   readonly defaultDateFormat: string = 'MMMM d, y';
 
   @Input() articlesSubject: BehaviorSubject<ArticleModel[]> = new BehaviorSubject<ArticleModel[]>([]);

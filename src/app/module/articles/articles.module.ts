@@ -5,7 +5,7 @@ import { ArticlesComponent } from '@app/module/articles/articles.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
-import { ArticleCardsModule } from '@app/components/article-cards/article-cards.module';
+import { ArticlesCardsModule } from '@app/components/articles-cards/articles-cards.module';
 import { MatInputModule } from '@angular/material/input';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,7 +16,7 @@ import { ArticlesResolver } from '@app/resolvers/articles.resolver';
   imports: [
     CommonModule,
     ArticlesRoutingModule,
-    ArticleCardsModule,
+    ArticlesCardsModule,
     MatFormFieldModule,
     MatIconModule,
     MatDividerModule,

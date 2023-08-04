@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { ArticleCardsComponent}  from '@app/components/article-cards/article-cards.component';
+import { ArticlesCardsComponent}  from '@app/components/articles-cards/articles-cards.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TruncatePipe } from '@app/pipes/truncate.pipe';
@@ -10,12 +10,12 @@ import { HighlightPipe } from '@app/pipes/highlight.pipe';
 
 @NgModule({
   declarations: [
-    ArticleCardsComponent,
+    ArticlesCardsComponent,
     TruncatePipe,
     HighlightPipe,
   ],
   exports: [
-    ArticleCardsComponent,
+    ArticlesCardsComponent,
   ],
   imports: [
     CommonModule,
@@ -25,5 +25,5 @@ import { HighlightPipe } from '@app/pipes/highlight.pipe';
     TranslateModule,
   ],
 })
-export class ArticleCardsModule {
+export class ArticlesCardsModule {
 }
