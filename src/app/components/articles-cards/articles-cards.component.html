@@ -1,9 +1,11 @@
-<div class="articles-container">
-  <mat-card *ngFor="let article of (articlesSubject | async)" class="article-card">
+<div class="articles-cards-container">
+  <mat-card class="article-card"
+            *ngFor="let article of (articlesSubject | async)">
     <img class="article-card-image"
          mat-card-image
          [src]="article.image_url"
          [alt]="'page.article.card.photoAlt' | translate">
+
     <mat-card-content class="article-card-content">
       <div class="article-card-date-label">
         <mat-icon>calendar_today</mat-icon>

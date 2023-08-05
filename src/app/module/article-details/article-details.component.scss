@@ -1,7 +1,6 @@
 @import "colors";
 
 .article-details-page-layout {
-  position: relative;
   height: 100%;
   background: $white;
 
@@ -43,18 +42,21 @@
     }
 
     .article-details-summary {
+      height: 100%;
       color: $dark;
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
       line-height: 150%;
+      overflow: auto;
     }
   }
 
   .article-details-actions {
-    position: fixed;
-    bottom: 25px;
-    left: 140px;
+    position: absolute;
+    bottom: 20px;
+    left: 20%;
+    transform: translateX(-50%);
     width: 220px;
     padding: 0;
 
@@ -73,6 +75,30 @@
       font-size: $size;
       width: $size;
       height: $size;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .article-details-page-layout {
+    .article-details-content {
+      .article-details-content-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 25px 35px 25px 35px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .article-details-page-layout {
+    .article-details-actions {
+        left: 50%;
     }
   }
 }
