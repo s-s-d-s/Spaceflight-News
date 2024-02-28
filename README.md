@@ -4,8 +4,6 @@ ____
 
 ## Overview
 
-WEBSITE - https://spaceflightnews-ssds.netlify.app
-
 The project was built on top of [Angular](https://angular.io/) framework.
 The version of the framework is 16.1.6.
 
